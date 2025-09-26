@@ -11,6 +11,7 @@ COPY patterns /patterns
 
 ENV PRINTER_URL="set PRINTER_URL with real printer url"
 ENV PRINTER_MODEL=everywhere
+ENV PATTERN_FILE="/patterns/nozzle-check-pattern-pdf-printer-banding-test.pdf"
 ENV CRON_SCHEDULE="* 8 * * 1"
 
 COPY entrypoint.sh /entrypoint.sh

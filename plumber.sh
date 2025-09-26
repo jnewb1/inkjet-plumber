@@ -1,3 +1,3 @@
 #!/bin/bash
 
-lp -d PRINTER /patterns/nozzle-check-pattern-pdf-printer-banding-test.pdf
+lp -d PRINTER $PATTERN_FILE
