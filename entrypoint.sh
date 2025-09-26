@@ -14,4 +14,8 @@ crontab /etc/cron.d/plumber
 
 lpadmin -p PRINTER -E -v "$PRINTER_URL" -m $PRINTER_MODEL
 
+touch $LOGFILE
+
+service cron start
+
 exec "$@"
