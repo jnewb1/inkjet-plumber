@@ -16,6 +16,8 @@ lpadmin -p PRINTER -E -v "$PRINTER_URL" -m $PRINTER_MODEL
 
 touch $LOGFILE
 
+printenv > /etc/environment
+
 service cron start
 
 exec "$@"
