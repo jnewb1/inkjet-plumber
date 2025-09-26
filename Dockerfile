@@ -11,7 +11,7 @@ COPY patterns /patterns
 
 ENV PRINTER_URL="set REPLACE_URL with real printer url"
 ENV PRINTER_MODEL=everywhere
-ENV CRON_SCHEDULE="* 8 * * 1" # monday at 8am
+ENV CRON_SCHEDULE="* 8 * * 1"
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
