@@ -1,5 +1,7 @@
 # Inkjet Plumber for Docker
 
+Prevent inkjet printers from drying out with weekly prints
+
 ## Environment Variables:
 
 | Variable Name | Description | Example Value | Required / Default Value |
