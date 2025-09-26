@@ -1,1 +1,2 @@
-patterns/* filter=lfs diff=lfs merge=lfs -text
+patterns/*.* filter=lfs diff=lfs merge=lfs -text
+patterns/nozzle-check-pattern-pdf-printer-banding-test.pdf filter=lfs diff=lfs merge=lfs -text
