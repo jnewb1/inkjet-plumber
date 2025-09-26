@@ -1,20 +1,17 @@
 FROM ubuntu
 
 RUN apt-get update && \
-    apt-get install -y cups cups-client cron && \
+    apt-get install -y cups cups-client cron gettext && \
     rm -rf /var/lib/apt/lists/*
 
 COPY plumber.sh /usr/local/bin/plumber.sh
-COPY crontab.txt /etc/cron.d/plumber
-
-RUN chmod +x /usr/local/bin/plumber.sh && \
-    chmod 0644 /etc/cron.d/plumber && \
-    crontab /etc/cron.d/plumber
+COPY crontab.template /crontab.template
 
 COPY patterns /patterns
 
-ENV PRINTER_URL=PRINTER_URL_HERE
+ENV PRINTER_URL="set REPLACE_URL with real printer url"
 ENV PRINTER_MODEL=everywhere
+ENV CRON_SCHEDULE="* 8 * * 1" # monday at 8am
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

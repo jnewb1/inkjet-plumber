@@ -8,6 +8,10 @@ until lpstat -r; do
   sleep 2
 done
 
-lpadmin -p PRINTER -E -v $PRINTER_URL -m $PRINTER_MODEL
+envsubst < /crontab.template > /etc/cron.d/plumber
+chmod 0644 /etc/cron.d/plumber
+crontab /etc/cron.d/plumber
+
+lpadmin -p PRINTER -E -v "$PRINTER_URL" -m $PRINTER_MODEL
 
 cron -f

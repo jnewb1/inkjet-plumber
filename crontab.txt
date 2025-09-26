@@ -1,1 +1,0 @@
-* 8 * * 1 root /usr/local/bin/plumber.sh >> /var/log/plumber.log 2>&1
