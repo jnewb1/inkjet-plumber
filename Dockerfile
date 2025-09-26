@@ -13,6 +13,9 @@ RUN chmod +x /usr/local/bin/plumber.sh && \
 
 COPY patterns /patterns
 
+ENV PRINTER_URL
+ENV PRINTER_MODEL=everywhere
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

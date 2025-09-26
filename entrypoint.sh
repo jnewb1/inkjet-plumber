@@ -8,8 +8,6 @@ until lpstat -r; do
   sleep 2
 done
 
-PRINTER_IP=192.168.56.11
-
-lpadmin -p PRINTER -E -v ipp://$PRINTER_IP/ipp/print -m everywhere
+lpadmin -p PRINTER -E -v $PRINTER_URL -m $PRINTER_MODEL
 
 cron -f
