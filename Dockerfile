@@ -9,7 +9,7 @@ COPY crontab.template /crontab.template
 
 COPY patterns /patterns
 
-ENV PRINTER_URL="set REPLACE_URL with real printer url"
+ENV PRINTER_URL="set PRINTER_URL with real printer url"
 ENV PRINTER_MODEL=everywhere
 ENV CRON_SCHEDULE="* 8 * * 1"
 
