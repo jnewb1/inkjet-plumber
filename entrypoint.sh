@@ -14,4 +14,4 @@ crontab /etc/cron.d/plumber
 
 lpadmin -p PRINTER -E -v "$PRINTER_URL" -m $PRINTER_MODEL
 
-cron -f
+exec "$@"
