@@ -7,6 +7,7 @@ RUN apt-get update && \
 COPY plumber.sh /usr/local/bin/plumber.sh
 RUN chmod +x /usr/local/bin/plumber.sh
 COPY crontab.template /crontab.template
+RUN sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf
 
 COPY patterns /patterns
 
@@ -21,4 +22,3 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD tail -f $LOGFILE
-
