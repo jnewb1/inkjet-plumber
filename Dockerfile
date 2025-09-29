@@ -5,6 +5,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY plumber.sh /usr/local/bin/plumber.sh
+RUN chmod +x /usr/local/bin/plumber.sh
 COPY crontab.template /crontab.template
 
 COPY patterns /patterns
@@ -18,4 +19,5 @@ ENV LOGFILE="/var/log/plumber.log"
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+
 CMD tail -f $LOGFILE
